@@ -13,6 +13,7 @@
 		267A337E1BFC2A81001BE926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267A337C1BFC2A81001BE926 /* Main.storyboard */; };
 		267A33801BFC2A81001BE926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267A337F1BFC2A81001BE926 /* Assets.xcassets */; };
 		267A33831BFC2A81001BE926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267A33811BFC2A81001BE926 /* LaunchScreen.storyboard */; };
+		267A338C1BFC58D8001BE926 /* SVStatusBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 267A338B1BFC58D8001BE926 /* SVStatusBarHUD.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		267A337F1BFC2A81001BE926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		267A33821BFC2A81001BE926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		267A33841BFC2A81001BE926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		267A338A1BFC58D8001BE926 /* SVStatusBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVStatusBarHUD.h; sourceTree = "<group>"; };
+		267A338B1BFC58D8001BE926 /* SVStatusBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVStatusBarHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				267A33791BFC2A81001BE926 /* ViewController.h */,
 				267A337A1BFC2A81001BE926 /* ViewController.m */,
 				267A337C1BFC2A81001BE926 /* Main.storyboard */,
+				267A338A1BFC58D8001BE926 /* SVStatusBarHUD.h */,
+				267A338B1BFC58D8001BE926 /* SVStatusBarHUD.m */,
 				267A337F1BFC2A81001BE926 /* Assets.xcassets */,
 				267A33811BFC2A81001BE926 /* LaunchScreen.storyboard */,
 				267A33841BFC2A81001BE926 /* Info.plist */,
@@ -152,6 +157,7 @@
 			files = (
 				267A337B1BFC2A81001BE926 /* ViewController.m in Sources */,
 				267A33781BFC2A81001BE926 /* AppDelegate.m in Sources */,
+				267A338C1BFC58D8001BE926 /* SVStatusBarHUD.m in Sources */,
 				267A33751BFC2A81001BE926 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
