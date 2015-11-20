@@ -13,11 +13,11 @@
 
 @interface SVViewController ()
 
-@property (nonatomic, strong) SVOneTableViewController *oneVC;
-@property (nonatomic, strong) SVTowViewController *twoVC;
-@property (nonatomic, strong) SVThreeViewController *threeVC;
+//@property (nonatomic, strong) SVOneTableViewController *oneVC;
+//@property (nonatomic, strong) SVTowViewController *twoVC;
+//@property (nonatomic, strong) SVThreeViewController *threeVC;
 
-@property (nonatomic, strong) NSArray *arrVCs;
+@property (nonatomic, strong) NSMutableArray *arrVCs;
 
 @end
 
@@ -27,6 +27,10 @@
     [super viewDidLoad];
 
     [self oneBtnClick:nil];
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    NSLog(@"main%s",__func__);
 }
 
 - (IBAction)oneBtnClick:(id)sender {
@@ -39,53 +43,47 @@
     
 }
 - (IBAction)twoBtnClick {
-    [self.oneVC.view removeFromSuperview];
-    [self.threeVC.view removeFromSuperview];
-    self.twoVC.view.frame = CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    [self.view addSubview:self.twoVC.view];
+//    [self.oneVC.view removeFromSuperview];
+//    [self.threeVC.view removeFromSuperview];
+//    self.twoVC.view.frame = CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+//    [self.view addSubview:self.twoVC.view];
+    
+    
+        [self selectViewController:1];
 }
 - (IBAction)threeBtnClick {
-    [self.oneVC.view removeFromSuperview];
-    [self.twoVC.view removeFromSuperview];
-    self.threeVC.view.frame = CGRectMake(0, 44, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - 44);
-    [self.view addSubview:self.threeVC.view];
-}
-
--(SVOneTableViewController *)oneVC {
-    if (!_oneVC) {
-        _oneVC = [[SVOneTableViewController alloc] init];
-    }
-    return _oneVC;
-}
--(SVTowViewController *)twoVC {
-    if (!_twoVC) {
-        _twoVC = [[SVTowViewController alloc] init];
-    }
-    return _twoVC;
-}
--(SVThreeViewController *)threeVC {
-    if (!_threeVC) {
-        _threeVC = [[SVThreeViewController alloc] init];
-    }
-    return _threeVC;
+//    [self.oneVC.view removeFromSuperview];
+//    [self.twoVC.view removeFromSuperview];
+//    self.threeVC.view.frame = CGRectMake(0, 44, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - 44);
+//    [self.view addSubview:self.threeVC.view];
+    
+        [self selectViewController:2];
 }
 
 - (void)selectViewController:(NSInteger)index {
 //    [self.oneVC.view removeFromSuperview];
 //    [self.twoVC.view removeFromSuperview];
+//    [self.view removeFromSuperview];
+    NSArray *arr = self.view.subviews;
+    arr = nil;
+//    self.view.subviews = arr;
+    
     
     UIViewController *vc = self.arrVCs[index];
     vc.view.frame = CGRectMake(0, 44, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height - 44);
     [self.view addSubview:vc.view];
 }
 
--(NSArray *)arrVCs {
+-(NSMutableArray *)arrVCs {
     SVOneTableViewController *oneVC = [[SVOneTableViewController alloc] init];
     SVTowViewController *twoVC = [[SVTowViewController alloc] init];
     SVThreeViewController *threeVC = [[SVThreeViewController alloc] init];
+
     if (!_arrVCs) {
         _arrVCs = @[oneVC, twoVC, threeVC];
     }
+    
+//    self addChildViewController:<#(nonnull UIViewController *)#>
     return _arrVCs;
 }
 

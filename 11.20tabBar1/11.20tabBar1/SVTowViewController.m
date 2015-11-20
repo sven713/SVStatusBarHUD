@@ -15,6 +15,10 @@
 
 @implementation SVTowViewController
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    NSLog(@"two%s",__func__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
